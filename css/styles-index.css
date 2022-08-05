@@ -1,0 +1,127 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+
+}
+
+body {
+    background-color:  #e9ecf8;
+}
+
+.content-box {
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+}
+
+/* Contenedor del formulario */
+.content-element {
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabecera */
+header {
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+header img {
+    width: 5em;
+    margin-left: 50px;
+    padding-left: 10px;
+    padding-top: 15px;
+}
+
+
+/*
+Formulario */
+.form-texto {
+    width: 80%;
+    height: calc(90vh - 60px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+
+.text-area-content {
+
+    width: 100%;
+    margin-top: 50px;
+    height: 400px;
+    resize: none;
+    font-size: 32px;
+    color: #052051;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+
+.text-area-content::placeholder {
+    color: black;
+}
+
+
+.botones-styles {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.botones-styles #buttonEnc {
+    width: 40%;
+    height: 50px;
+    border-radius: 20px;
+    border: 1px;
+    border-style: solid;
+    background-color: #0A3871;
+    color: white;
+}
+
+.botones-styles #buttonDes {
+    width: 40%;
+    height: 50px;
+    border-radius: 20px;
+    border-color:  #0A3871;
+    background-color: #D8DFE8;
+    color:#0A3871;
+}
+
+
+/* Mostrar encriptacion/descriptacion */
+
+.content-show {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.content-show .show-text {
+    width: 90%;
+    height: 90vh;
+    background-color: white;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.content-show .show-text img {
+    width: 70%;
+}
