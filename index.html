@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"  type="text/css" href="css/styles-index.css" media="all"/>
+    <link rel="stylesheet"  type="text/css" href="css/styles-index.css"/>
+    <link rel="icon" type="icon-X" href="icons/diamod.png"/>
     <title>Encriptador alura latam</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body>
     <!-- Contenedor Principal -->
@@ -18,14 +20,18 @@
             </header>
 
             <!-- Formulario -->
-            <form class="form-texto">
-                <textarea class="text-area-content" placeholder="ingrese texto aqui" >
+            <div class="form-texto">
+                <textarea class="text-area-content" id="texto" name="texto" placeholder="Ingrese texto aqui">
                 </textarea>
+                <span>
+                <img src="/icons/exclamation-mark.png"/>
+                <p>Solo letras minúsculas y sin acentos</p>
+                </span>
                 <div class="botones-styles">
-                    <input type="button" id="buttonEnc" value="Encriptar">
-                    <input type="button"id="buttonDes" value="Desencriptar">
+                    <button id="buttonEnc"> Encriptar</button>
+                    <button  id="buttonDes" >Desencriptar</button>
                 </div>
-            </form>
+            </div>
         </div>
 
         <!-- Mostrar Contenido -->
@@ -37,6 +43,10 @@
             </div>
         </div>
     </div>
+    <script src="/js/encriptor.js"></script>
+    <script>
+        document.getElementsByTagName("textarea")[0].value = ""
+    </script>
 
 </body>
 </html>
