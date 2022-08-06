@@ -2,8 +2,9 @@
 *{
     margin: 0px;
     padding: 0px;
-
 }
+
+
 
 body {
     background-color:  #e9ecf8;
@@ -33,9 +34,9 @@ header {
 
 header img {
     width: 5em;
-    margin-left: 50px;
-    padding-left: 10px;
-    padding-top: 15px;
+    margin-left: 70px;
+    margin-top: 15px;
+
 }
 
 
@@ -43,8 +44,9 @@ header img {
 Formulario */
 .form-texto {
     width: 80%;
-    height: calc(90vh - 60px);
+    height: calc(90vh - 80px);
     margin: 0 auto;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -53,7 +55,6 @@ Formulario */
 
 
 .text-area-content {
-
     width: 100%;
     margin-top: 50px;
     height: 400px;
@@ -63,17 +64,16 @@ Formulario */
     border: none;
     outline: none;
     background-color: transparent;
+    flex-grow: 1;
 }
-
 
 .text-area-content::placeholder {
     color: black;
 }
 
-
 .botones-styles {
     width: 100%;
-    height: 100px;
+    height: 75px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -89,6 +89,24 @@ Formulario */
     border-style: solid;
     background-color: #0A3871;
     color: white;
+}
+
+.form-texto span {
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.form-texto p{
+    color: rgb(61, 61, 61);
+    font-size: 15px;
+    display: inline-block;
+
+}
+.form-texto img {
+    width: 15px;
+    height: 15px;
+    padding: 0 3px;
 }
 
 .botones-styles #buttonDes {
@@ -124,4 +142,97 @@ Formulario */
 
 .content-show .show-text img {
     width: 70%;
+}
+
+
+
+/* Tablet Portrait */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    .content-box {
+        flex-direction: column;
+    }
+    .content-element {
+        width: 100%;
+    }
+    .content-show {
+        width: 100%;
+        height: auto;
+    }
+    .content-show .show-text {
+        width: 70%;
+        padding: 30px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .content-show img {
+        display: none;
+    }
+    .form-texto {
+        padding-top: 30px;
+        height: 80vh;
+    }
+
+    .botones-styles #buttonEnc  {
+        width: 45%;
+    }
+
+}
+
+
+/*Phones Portrait */
+@media screen
+  and (min-device-width: 320px)
+  and (max-device-width: 768px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    /* Contenedor Principal */
+    .content-box {
+        flex-direction: column;
+    }
+    /* contenedor de formulario */
+    .content-element {
+        width: 100%;
+    }
+    .form-texto {
+        padding-top: 30px;
+        height: 80vh;
+    }
+    .botones-styles #buttonEnc  {
+        width: 45%;
+    }
+    /* Contenedor el texto encrip/desencrip */
+    .content-show {
+        width: 100%;
+        height: auto;
+    }
+    .content-show .show-text {
+        width: 70%;
+        padding: 30px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .content-show img {
+        display: none;
+    }
+
+    .botones-styles {
+        flex-direction: column;
+        justify-content: space-between;
+        height: auto;
+    }
+
+    .botones-styles #buttonEnc {
+        width: 80%;
+        margin: 10px 0;
+    }
+    .botones-styles #buttonDes {
+        width: 80%;
+        margin: 10px 0;
+    }
+
 }
