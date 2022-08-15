@@ -1,37 +1,82 @@
 
-const texto = document.getElementById('texto');
-const buttonEncriptar = document.getElementById('buttonEnc');
-const buttonDesencriptar = document.getElementById('buttonDes');
-
-function comprobarMayusculas(t){
-    for(let i=0; i < t.length; i++){
-        if(t.charCodeAt(i) < 97 || t.charCodeAt(i) > 122){
-            return false;
+const txtAreaParrafo = document.getElementById('texto');
+const btnEncriptar = document.getElementById('buttonEnc');
+const btnDesencriptar = document.getElementById('buttonDes');
+const btnCopy = document.getElementById("buttonCopy");
+const showText = document.getElementById("text-modificado");
+    function encriptarTexto(Texto){
+    let textoEncriptado= "";
+    for(let i = 0; i < Texto.length; i++){
+        switch (Texto.charAt(i)){
+            case "e":
+                textoEncriptado += "enter";
+                break;
+            case "i":
+                textoEncriptado += "imes";
+                break;
+            case "a":
+                textoEncriptado += "ai";
+                break;
+            case "o":
+                textoEncriptado += "ober";
+                break;
+            case "u":
+                textoEncriptado += "ufat";
+                break;
+            default:
+                textoEncriptado += Texto.charAt(i)
+                break;
         }
     }
-    return true;
+    return textoEncriptado;
+}
+
+function remplazar(texto,letra,parrafo){
+    return parrafo.replaceAll(texto,letra);
+}
+
+function cambiar(){
+    const mostrarInfo = document.getElementById("span-content-show");
+    const mostrarText = document.getElementById("text-Modificado-content");
+    mostrarInfo.style.display = "none";
+    mostrarText.style.display = "flex";
 }
 
 
-texto.addEventListener("keyup", () => {
-    console.log("[Escribiendo]");
-    let text =  texto.value;
-    let botonesDisable = document.querySelectorAll("button");
-    if(!comprobarMayusculas(texto.value)){
-        document.getElementById("texto").style.color = "red";
-        botonesDisable.disabled = true;
-    }else {
-        document.getElementById("texto").style.color = "black";
-        botonesDisable.disabled = false;
-    }
+function desencriptarTexto(Texto){
+    let desencriptado = "";
+    desencriptado = remplazar("enter","e",Texto);
+    desencriptado = remplazar("imes","i",desencriptado);
+    desencriptado = remplazar("ai","a",desencriptado);
+    desencriptado = remplazar("ober","o",desencriptado);
+    desencriptado = remplazar("ufat","u",desencriptado);
+    return desencriptado;
+}
+
+function copyToClipboard() {
+    navigator.clipboard.writeText(txtAreaParrafo.value).then(() => {
+        // Alert the user that the action took place.
+        // Nobody likes hidden stuff being done under the hood!
+        alert("Copied to clipboard");
+    });
+}
+
+
+btnEncriptar.addEventListener("click", () => {
+    console.log("Encriptando");
+    showText.textContent = encriptarTexto(txtAreaParrafo.value);
+    console.log();
+
+    cambiar();
 });
 
-buttonEncriptar.onclick = () => {
-    console.log("me preciono wa a encriptar uwu");
-}
+btnDesencriptar.addEventListener("click", ()=>{
+   console.log("Desencriptando");
+    showText.textContent = desencriptarTexto(txtAreaParrafo.value);
+    cambiar();
+});
 
-buttonDesencriptar.onclick = () => {
-    console.log("me preciono wa a desencriptar Zzz");
-}
-
-
+btnCopy.addEventListener("click", () =>{
+    document.execCommand("copy",false,)
+    copyToClipboard();
+});
