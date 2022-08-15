@@ -55,9 +55,7 @@ function desencriptarTexto(Texto){
 
 function copyToClipboard() {
     navigator.clipboard.writeText(txtAreaParrafo.value).then(() => {
-        // Alert the user that the action took place.
-        // Nobody likes hidden stuff being done under the hood!
-        alert("Copied to clipboard");
+        alert("Texto Copiado!!!");
     });
 }
 
