@@ -1,7 +1,8 @@
 
 *{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+
 }
 
 
@@ -45,8 +46,7 @@ Formulario */
 .form-texto {
     width: 80%;
     height: calc(90vh - 80px);
-    margin: 0 auto;
-    margin-top: 10px;
+    margin: 0 auto 0;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -65,6 +65,7 @@ Formulario */
     outline: none;
     background-color: transparent;
     flex-grow: 1;
+    transition: 2s;
 }
 
 .text-area-content::placeholder {
@@ -85,10 +86,15 @@ Formulario */
     width: 40%;
     height: 50px;
     border-radius: 20px;
-    border: 1px;
-    border-style: solid;
+    border: 1px solid #D8DFE8;
     background-color: #0A3871;
     color: white;
+}
+
+.botones-styles #buttonEnc:hover {
+    border-color:  #0A3871 ;
+    background-color: #D8DFE8;
+    color:#0A3871;;
 }
 
 .form-texto span {
@@ -118,6 +124,11 @@ Formulario */
     color:#0A3871;
 }
 
+.botones-styles #buttonDes:hover {
+    border-color:  #D8DFE8 ;
+    background-color: #0A3871;
+    color:#D8DFE8;;
+}
 
 /* Mostrar encriptacion/descriptacion */
 
@@ -128,7 +139,7 @@ Formulario */
     align-items: center;
 }
 
-.content-show .show-text {
+.content-show #show-text {
     width: 90%;
     height: 90vh;
     background-color: white;
@@ -138,13 +149,39 @@ Formulario */
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    box-sizing: border-box;
 }
 
-.content-show .show-text img {
+.content-show #show-text img {
     width: 70%;
 }
 
 
+.content-block-2 {
+    width: 90%;
+    height: 90%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.content-block-2 p {
+    font-size: 20px;
+    text-align: center;
+}
+#buttonCopy {
+    width: 90%;
+    height: 50px;
+    border-radius: 20px;
+    border-color:  #0A3871;
+    background-color: #D8DFE8;
+    color:#0A3871;
+}
+#buttonCopy:hover {
+    border-color:  #D8DFE8 ;
+    background-color: #0A3871;
+    color:#D8DFE8;;
+}
 
 /* Tablet Portrait */
 @media only screen
@@ -163,7 +200,7 @@ Formulario */
         width: 100%;
         height: auto;
     }
-    .content-show .show-text {
+    .content-show #show-text {
         width: 70%;
         padding: 30px;
         height: auto;
@@ -210,7 +247,7 @@ Formulario */
         width: 100%;
         height: auto;
     }
-    .content-show .show-text {
+    .content-show #show-text {
         width: 70%;
         padding: 30px;
         height: auto;
