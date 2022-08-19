@@ -127,7 +127,7 @@ Formulario */
 .botones-styles #buttonDes:hover {
     border-color:  #D8DFE8 ;
     background-color: #0A3871;
-    color:#D8DFE8;;
+    color:#D8DFE8;
 }
 
 /* Mostrar encriptacion/descriptacion */
@@ -169,6 +169,20 @@ Formulario */
     font-size: 20px;
     text-align: center;
 }
+.content-show #show-text span p {
+    width: 100%;
+    word-wrap: break-word;
+}
+footer {
+    width: 100%;
+    height: 50px;
+    background-color: #052051;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
 #buttonCopy {
     width: 90%;
     height: 50px;
@@ -206,6 +220,10 @@ Formulario */
         height: auto;
         margin-bottom: 20px;
     }
+    .content-show #show-text span p {
+        width: 100%;
+        word-wrap: break-word;
+    }
     .content-show img {
         display: none;
     }
@@ -216,6 +234,9 @@ Formulario */
 
     .botones-styles #buttonEnc  {
         width: 45%;
+    }
+    footer{
+        margin-top: 5%;
     }
 
 }
@@ -230,6 +251,7 @@ Formulario */
     /* Contenedor Principal */
     .content-box {
         flex-direction: column;
+        justify-content: space-around;
     }
     /* contenedor de formulario */
     .content-element {
@@ -237,7 +259,8 @@ Formulario */
     }
     .form-texto {
         padding-top: 30px;
-        height: 80vh;
+        height: auto;
+
     }
     .botones-styles #buttonEnc  {
         width: 45%;
@@ -246,12 +269,17 @@ Formulario */
     .content-show {
         width: 100%;
         height: auto;
+
     }
     .content-show #show-text {
         width: 70%;
         padding: 30px;
         height: auto;
         margin-bottom: 20px;
+    }
+    .content-show #show-text span p {
+        width: 100%;
+        word-wrap: break-word;
     }
     .content-show img {
         display: none;
@@ -270,6 +298,9 @@ Formulario */
     .botones-styles #buttonDes {
         width: 80%;
         margin: 10px 0;
+    }
+    footer{
+        margin-top: 5%;
     }
 
 }

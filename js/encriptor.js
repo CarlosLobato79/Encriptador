@@ -40,6 +40,7 @@ function cambiar(){
     const mostrarText = document.getElementById("text-Modificado-content");
     mostrarInfo.style.display = "none";
     mostrarText.style.display = "flex";
+
 }
 
 
@@ -59,19 +60,44 @@ function copyToClipboard() {
     });
 }
 
+function comprobarFrase(textParrafo){
+        let mayus = true;
+        for(let i = 0; i < textParrafo.length; i++){
+            if(textParrafo.charAt(i) == " "){
+                continue;
+            }else {
+                if(textParrafo.charAt(i) == textParrafo.charAt().toUpperCase()){
+                    mayus = false;
+                }
+                if(textParrafo.charCodeAt(i) < 97 || textParrafo.charCodeAt(i) > 122){
+                    mayus = false;
+                }
+            }
+
+        if(mayus === false){
+            alert("Solo letras minúsculas y sin acentos")
+            return false;
+        }else{
+            return true;
+        }
+    }
+}
 
 btnEncriptar.addEventListener("click", () => {
-    console.log("Encriptando");
-    showText.textContent = encriptarTexto(txtAreaParrafo.value);
-    console.log();
 
-    cambiar();
+    if(comprobarFrase(txtAreaParrafo.value ) == true){
+        showText.textContent = encriptarTexto(txtAreaParrafo.value);
+        cambiar();
+    }
 });
 
 btnDesencriptar.addEventListener("click", ()=>{
    console.log("Desencriptando");
     showText.textContent = desencriptarTexto(txtAreaParrafo.value);
-    cambiar();
+    if(comprobarFrase(txtAreaParrafo.value ) == true){
+        cambiar();
+    }
+
 });
 
 btnCopy.addEventListener("click", () =>{
