@@ -55,7 +55,7 @@ function desencriptarTexto(Texto){
 }
 
 function copyToClipboard() {
-    navigator.clipboard.writeText(txtAreaParrafo.value).then(() => {
+    navigator.clipboard.writeText(encriptarTexto(txtAreaParrafo.value)).then(() => {
         alert("Texto Copiado!!!");
     });
 }
